@@ -671,22 +671,33 @@
     </div>
 
     <!-- ===== 動画 作品グリッド =====
-         画像(サムネ)追加: images/movie/01.jpg, 02.jpg ...
-         動画を直接埋める場合: img → video タグに差し替え -->
+         ▼ リンク先の変更方法：各 <a> の href="#LINK_あくま" の部分を
+           実際のURL（例: https://www.youtube.com/...）に書き換えてください。
+         ▼ まだURLが決まっていない行はそのまま（# のまま）でOKです。 -->
     <div id="video-works-section" style="display:none">
       <div class="portfolio-grid">
-        <div class="portfolio-item" data-category="video">
-          <div class="portfolio-placeholder"><span>🎬</span></div>
-          <img src="images/movie/01.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+
+        <!-- あくま -->
+        <a href="#LINK_あくま" target="_blank" class="portfolio-item" data-category="video" style="text-decoration:none">
+          <img src="videos/あくま.gif" alt="" loading="lazy">
           <div class="video-badge">▶ VIDEO</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>VIDEO</span></div></div>
-        </div>
-        <div class="portfolio-item" data-category="video">
-          <div class="portfolio-placeholder"><span>🎬</span></div>
-          <img src="images/movie/02.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+        </a>
+
+        <!-- さめ -->
+        <a href="#LINK_さめ" target="_blank" class="portfolio-item" data-category="video" style="text-decoration:none">
+          <img src="videos/さめ.gif" alt="" loading="lazy">
           <div class="video-badge">▶ VIDEO</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>VIDEO</span></div></div>
-        </div>
+        </a>
+
+        <!-- ティラノ -->
+        <a href="#LINK_ティラノ" target="_blank" class="portfolio-item" data-category="video" style="text-decoration:none">
+          <img src="videos/ティラノ.gif" alt="" loading="lazy">
+          <div class="video-badge">▶ VIDEO</div>
+          <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>VIDEO</span></div></div>
+        </a>
+
       </div>
     </div>
 
@@ -1493,8 +1504,9 @@ const catFiles = {
     // '02.jpg',
   ],
   'video': [
-    // '01.mp4',
-    // '02.mp4',
+    'あくま.gif',
+    'さめ.gif',
+    'ティラノ.gif',
   ],
 };
 
@@ -1504,7 +1516,7 @@ const catFolders = {
   'illust-b': 'images/illust-ruichirin/',
   'live2d':   'images/Live2D/',
   'design':   'images/design/',
-  'video':    'images/movie/',
+  'video':    'videos/',
 };
 
 // ファイル名 → catMedia オブジェクトを自動生成
