@@ -640,19 +640,22 @@
          リンクURL: 各 <a> の href を実際のURLに変更してください -->
     <div id="live2d-works-section" style="display:none">
       <div class="portfolio-grid portfolio-grid--live2d">
-        <a href="#LINK_01" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
-          <img src="images/Live2D/01.gif" alt="LIVE2D MODEL 1" loading="lazy">
+        <!-- あくま：href を実際のYouTube等URLに書き換えてください -->
+        <a href="#LINK_あくま" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
+          <img src="videos/あくま.gif" alt="あくま" loading="lazy">
           <div class="video-badge">▶ YOU TUBE</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>LIVE2D MODEL</span></div></div>
         </a>
-        <a href="#LINK_02" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
-          <img src="images/Live2D/02.gif" alt="LIVE2D MODEL 2" loading="lazy">
+        <!-- さめ：href を実際のYouTube等URLに書き換えてください -->
+        <a href="#LINK_さめ" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
+          <img src="videos/さめ.gif" alt="さめ" loading="lazy">
           <div class="video-badge">▶ YOU TUBE</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>LIVE2D MODEL</span></div></div>
         </a>
-        <a href="#LINK_03" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
-          <img src="images/Live2D/03.gif" alt="LIVE2D MODEL 3" loading="lazy">
-          <div class="video-badge">▶ YOUTUBE</div>
+        <!-- ティラノ：href を実際のYouTube等URLに書き換えてください -->
+        <a href="#LINK_ティラノ" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
+          <img src="videos/ティラノ.gif" alt="ティラノ" loading="lazy">
+          <div class="video-badge">▶ YOU TUBE</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>LIVE2D MODEL</span></div></div>
         </a>
       </div>
@@ -671,33 +674,22 @@
     </div>
 
     <!-- ===== 動画 作品グリッド =====
-         ▼ リンク先の変更方法：各 <a> の href="#LINK_あくま" の部分を
-           実際のURL（例: https://www.youtube.com/...）に書き換えてください。
-         ▼ まだURLが決まっていない行はそのまま（# のまま）でOKです。 -->
+         画像(サムネ)追加: images/movie/01.jpg, 02.jpg ...
+         動画を直接埋める場合: img → video タグに差し替え -->
     <div id="video-works-section" style="display:none">
       <div class="portfolio-grid">
-
-        <!-- あくま -->
-        <a href="#LINK_あくま" target="_blank" class="portfolio-item" data-category="video" style="text-decoration:none">
-          <img src="videos/あくま.gif" alt="" loading="lazy">
+        <div class="portfolio-item" data-category="video">
+          <div class="portfolio-placeholder"><span>🎬</span></div>
+          <img src="images/movie/01.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
           <div class="video-badge">▶ VIDEO</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>VIDEO</span></div></div>
-        </a>
-
-        <!-- さめ -->
-        <a href="#LINK_さめ" target="_blank" class="portfolio-item" data-category="video" style="text-decoration:none">
-          <img src="videos/さめ.gif" alt="" loading="lazy">
+        </div>
+        <div class="portfolio-item" data-category="video">
+          <div class="portfolio-placeholder"><span>🎬</span></div>
+          <img src="images/movie/02.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
           <div class="video-badge">▶ VIDEO</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>VIDEO</span></div></div>
-        </a>
-
-        <!-- ティラノ -->
-        <a href="#LINK_ティラノ" target="_blank" class="portfolio-item" data-category="video" style="text-decoration:none">
-          <img src="videos/ティラノ.gif" alt="" loading="lazy">
-          <div class="video-badge">▶ VIDEO</div>
-          <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>VIDEO</span></div></div>
-        </a>
-
+        </div>
       </div>
     </div>
 
@@ -1504,9 +1496,8 @@ const catFiles = {
     // '02.jpg',
   ],
   'video': [
-    'あくま.gif',
-    'さめ.gif',
-    'ティラノ.gif',
+    // '01.mp4',
+    // '02.mp4',
   ],
 };
 
@@ -1516,7 +1507,7 @@ const catFolders = {
   'illust-b': 'images/illust-ruichirin/',
   'live2d':   'images/Live2D/',
   'design':   'images/design/',
-  'video':    'videos/',
+  'video':    'images/movie/',
 };
 
 // ファイル名 → catMedia オブジェクトを自動生成
