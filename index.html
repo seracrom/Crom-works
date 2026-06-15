@@ -61,7 +61,7 @@
   .hero-title { font-family:var(--font-display); font-size:clamp(3.5rem,9vw,8rem); font-weight:300; color:var(--star-white); line-height:1; letter-spacing:0.02em; margin-bottom:0.3rem; opacity:0; animation:fadeUp 1s ease 0.7s forwards; }
   .hero-title em { font-style:italic; color:var(--wine-light); }
   .hero-subtitle { font-family:var(--font-display); font-size:clamp(1rem,2.5vw,1.6rem); color:var(--gold-light); font-weight:300; letter-spacing:0.2em; margin-bottom:2.5rem; opacity:0; animation:fadeUp 1s ease 0.9s forwards; }
-  .hero-desc { font-size:0.85rem; color:rgba(250,246,240,0.7); max-width:480px; margin:0 auto 3rem; line-height:1.9; font-weight:300; opacity:0; animation:fadeUp 1s ease 1.1s forwards; letter-spacing:0.05em; }
+  .hero-desc { font-size:0.95rem; color:rgba(250,246,240,0.88); max-width:480px; margin:0 auto 3rem; line-height:2; font-weight:300; opacity:0; animation:fadeUp 1s ease 1.1s forwards; letter-spacing:0.05em; }
   .hero-buttons { display:flex; gap:1.2rem; justify-content:center; opacity:0; animation:fadeUp 1s ease 1.3s forwards; flex-wrap:wrap; }
   .btn-primary { background:var(--wine); border:none; color:var(--cream); padding:0.9rem 2.5rem; font-family:var(--font-body); font-size:0.75rem; letter-spacing:0.2em; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.3s; position:relative; overflow:hidden; }
   .btn-primary::before { content:''; position:absolute; inset:0; background:var(--wine-mid); transform:scaleX(0); transform-origin:left; transition:transform 0.3s; }
@@ -102,7 +102,7 @@
   .service-card:hover::before { width:100%; }
   .service-icon { font-size:1.8rem; margin-bottom:1rem; display:block; }
   .service-name { font-family:var(--font-display); font-size:1.4rem; color:var(--gold-light); margin-bottom:0.8rem; font-weight:400; }
-  .service-desc { font-size:0.8rem; color:rgba(250,246,240,0.55); line-height:1.9; font-weight:300; }
+  .service-desc { font-size:0.88rem; color:rgba(250,246,240,0.75); line-height:1.95; font-weight:300; }
 
   /* PORTFOLIO */
   #portfolio { background:#0A0015; }
@@ -219,7 +219,7 @@
   .modal-section-title { font-size:0.6rem; letter-spacing:0.25em; color:var(--wine-mid); font-weight:300; margin:1.5rem 0 0.8rem; padding-bottom:0.4rem; border-bottom:0.5px solid var(--cream-dark); }
   .modal-table { width:100%; border-collapse:collapse; }
   .modal-table th { text-align:left; font-size:0.6rem; letter-spacing:0.2em; color:var(--wine-mid); font-weight:300; padding:0.6rem 0.8rem; border-bottom:0.5px solid var(--cream-dark); }
-  .modal-table td { padding:0.9rem 0.8rem; font-size:0.82rem; color:#3A2030; border-bottom:0.5px solid var(--cream-dark); font-weight:300; vertical-align:top; line-height:1.7; }
+  .modal-table td { padding:0.9rem 0.8rem; font-size:0.9rem; color:#2A1018; border-bottom:0.5px solid var(--cream-dark); font-weight:400; vertical-align:top; line-height:1.75; }
   .modal-table tr:last-child td { border-bottom:none; }
   .modal-table tr:hover td { background:rgba(92,26,46,0.03); }
   .modal-price { font-family:var(--font-display); font-size:1.1rem; color:var(--wine); font-weight:400; white-space:nowrap; }
@@ -235,13 +235,31 @@
   .pricing-panel { display:none; padding:2rem 0; }
   .pricing-panel.active { display:block; }
   .pricing-table { width:100%; border-collapse:collapse; }
-  .pricing-table th { text-align:left; font-size:0.6rem; letter-spacing:0.2em; color:var(--gold); font-weight:300; padding:0.8rem 1rem; border-bottom:0.5px solid rgba(201,169,110,0.1); }
-  .pricing-table td { padding:1rem; font-size:0.82rem; color:rgba(250,246,240,0.75); border-bottom:0.5px solid rgba(255,255,255,0.04); font-weight:300; vertical-align:top; line-height:1.7; }
+  .pricing-table th { text-align:left; font-size:0.68rem; letter-spacing:0.2em; color:var(--gold); font-weight:400; padding:0.8rem 1rem; border-bottom:0.5px solid rgba(201,169,110,0.1); }
+  .pricing-table td { padding:1rem; font-size:0.9rem; color:rgba(250,246,240,0.9); border-bottom:0.5px solid rgba(255,255,255,0.04); font-weight:300; vertical-align:top; line-height:1.75; }
   .pricing-table tr:hover td { background:rgba(255,255,255,0.02); }
   .price-tag { font-family:var(--font-display); font-size:1.1rem; color:var(--gold-light); white-space:nowrap; font-weight:400; }
-  .price-note { font-size:0.65rem; color:rgba(201,169,110,0.45); display:block; margin-top:0.2rem; }
-  .pricing-footer { margin-top:2rem; padding:1.5rem; border:0.5px solid rgba(201,169,110,0.1); background:rgba(255,255,255,0.02); font-size:0.75rem; color:rgba(201,169,110,0.5); line-height:1.9; font-weight:300; }
-  .pricing-footer strong { color:rgba(201,169,110,0.7); font-weight:400; }
+  .price-note { font-size:0.72rem; color:rgba(201,169,110,0.6); display:block; margin-top:0.2rem; }
+  .pricing-footer { margin-top:2rem; padding:1.5rem; border:0.5px solid rgba(201,169,110,0.1); background:rgba(255,255,255,0.02); font-size:0.85rem; color:rgba(201,169,110,0.72); line-height:2.1; font-weight:300; }
+  .pricing-footer strong { color:rgba(201,169,110,0.9); font-weight:400; }
+  /* 料金詳細ボタン（Live2Dオプション・セットプラン詳細） */
+  .detail-btn { display:inline-flex; align-items:center; gap:0.4rem; margin-top:0.4rem; padding:0.4rem 1.1rem; background:rgba(201,169,110,0.08); border:0.5px solid rgba(201,169,110,0.4); color:var(--gold-light); font-family:var(--font-body); font-size:0.72rem; letter-spacing:0.12em; cursor:pointer; transition:all 0.25s; white-space:nowrap; }
+  .detail-btn:hover { background:rgba(201,169,110,0.18); border-color:var(--gold); color:var(--gold); }
+  .detail-btn::after { content:'›'; font-size:0.95rem; line-height:1; }
+  .live2d-option-cta { margin-top:1.2rem; text-align:left; }
+  .live2d-option-cta .detail-btn { font-size:0.78rem; padding:0.6rem 1.4rem; }
+  /* モーダル内の料金リスト */
+  .modal-optlist { list-style:none; margin:0.5rem 0 0; }
+  .modal-optlist li { display:flex; justify-content:space-between; gap:1rem; align-items:baseline; padding:0.7rem 0.3rem; border-bottom:0.5px solid var(--cream-dark); font-size:0.9rem; color:#2A1018; font-weight:400; line-height:1.6; }
+  .modal-optlist li:last-child { border-bottom:none; }
+  .modal-optlist .opt-price { font-family:var(--font-display); font-size:1.05rem; color:var(--wine); white-space:nowrap; font-weight:400; }
+  /* 診断サイト誘導バナー */
+  .diagnosis-banner { max-width:1100px; margin:0 auto; padding:0 3rem; }
+  .diagnosis-inner { background:linear-gradient(135deg,rgba(92,26,46,0.55),rgba(26,13,46,0.55)); border:0.5px solid rgba(201,169,110,0.3); padding:2.2rem 2rem; text-align:center; }
+  .diagnosis-inner h3 { font-family:var(--font-display); font-size:1.5rem; color:var(--star-white); font-weight:400; margin-bottom:0.6rem; }
+  .diagnosis-inner p { font-size:0.88rem; color:rgba(250,246,240,0.78); line-height:1.9; font-weight:300; margin-bottom:1.4rem; }
+  .diagnosis-btn { display:inline-block; background:var(--gold); color:var(--wine-deep); padding:0.9rem 2.6rem; font-family:var(--font-body); font-size:0.8rem; letter-spacing:0.15em; text-decoration:none; transition:all 0.3s; border:none; cursor:pointer; }
+  .diagnosis-btn:hover { background:var(--gold-light); }
 
   /* FAQ */
   #faq { background:var(--cream); }
@@ -258,7 +276,7 @@
   #contact { background:#3A0D1C; }
   #contact::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 20%,rgba(139,40,64,0.3) 0%,transparent 50%); pointer-events:none; }
   .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; margin-top:3rem; align-items:start; }
-  .contact-info p { font-size:0.85rem; color:rgba(250,246,240,0.65); line-height:2; font-weight:300; margin-bottom:2rem; }
+  .contact-info p { font-size:0.92rem; color:rgba(250,246,240,0.82); line-height:2.05; font-weight:300; margin-bottom:2rem; }
   .contact-detail { display:flex; flex-direction:column; gap:1rem; margin-bottom:2.5rem; }
   .contact-detail-item { display:flex; align-items:center; gap:1rem; font-size:0.8rem; color:rgba(250,246,240,0.6); font-weight:300; }
   .contact-detail-item::before { content:'✦'; color:var(--gold-dark); font-size:0.6rem; }
@@ -268,7 +286,7 @@
   .sns-btn-dark:hover { background:rgba(201,169,110,0.1); border-color:var(--gold); color:var(--gold); }
   .form-box { background:rgba(255,255,255,0.04); border:0.5px solid rgba(201,169,110,0.15); padding:2.5rem; }
   .form-box h3 { font-family:var(--font-display); font-size:1.5rem; color:var(--star-white); font-weight:400; margin-bottom:1.5rem; }
-  .form-box p { font-size:0.82rem; color:rgba(250,246,240,0.55); line-height:1.9; margin-bottom:2rem; font-weight:300; }
+  .form-box p { font-size:0.9rem; color:rgba(250,246,240,0.75); line-height:1.95; margin-bottom:2rem; font-weight:300; }
   .form-btn-link { display:block; text-align:center; background:var(--wine); color:var(--cream); padding:1rem 2rem; text-decoration:none; font-size:0.75rem; letter-spacing:0.2em; transition:background 0.3s; }
   .form-btn-link:hover { background:var(--wine-mid); }
 
@@ -798,7 +816,7 @@
           </tr>
           <tr>
             <td>全身立ち絵</td>
-            <td><span class="modal-price">¥20,000〜</span><span class="modal-price-note">税込</span></td>
+            <td><span class="modal-price">¥20000〜</span><span class="modal-price-note">税込</span></td>
             <td style="font-size:0.78rem;color:#7A5060">約2週間</td>
           </tr>
           <tr>
@@ -947,6 +965,150 @@
   </div>
 </div>
 
+<!-- =====================================================
+     Live2D 追加オプション 料金モーダル
+     ・料金・項目を変更したいときは下の <li> を編集してください
+     ===================================================== -->
+<div class="modal-overlay" id="modal-live2d-options" onclick="closeOnOverlay(event,this)">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div>
+        <p class="modal-member-label">LIVE2D — OPTION</p>
+        <h2 class="modal-title">Live2D 追加オプション</h2>
+        <p class="modal-subtitle">モデルに追加できるオプション料金一覧</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-live2d-options')" aria-label="閉じる">✕</button>
+    </div>
+    <div class="modal-body">
+      <ul class="modal-optlist">
+        <li><span>表情差分</span><span class="opt-price">¥5000〜</span></li>
+        <li><span>顔回りアニメーション（涙等）</span><span class="opt-price">¥10000〜</span></li>
+        <li><span>一部アニメーション（手を振る等）</span><span class="opt-price">¥10000〜</span></li>
+        <li><span>全身アニメーション（歩き等）</span><span class="opt-price">¥20000〜</span></li>
+        <li><span>顔回り装飾（ピンや帽子等）</span><span class="opt-price">¥5000〜</span></li>
+        <li><span>揺れ物（フリル、チェーン等）</span><span class="opt-price">¥5000〜</span></li>
+        <li><span>複雑な装飾（宝石など）</span><span class="opt-price">¥8000〜</span></li>
+      </ul>
+      <p class="modal-note">
+        ※ 料金は内容・作業量により変動する場合があります。<br>
+        ※ 正式な金額はヒアリング後にお見積もりをお送りします。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================
+     セットプラン 詳細モーダル（4プラン）
+     ・含まれる内容を変更したいときは <li> を編集してください
+     ===================================================== -->
+
+<!-- お試しセット -->
+<div class="modal-overlay" id="modal-set-otameshi" onclick="closeOnOverlay(event,this)">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div>
+        <p class="modal-member-label">SET PLAN</p>
+        <h2 class="modal-title">Vtuberお試しセット</h2>
+        <p class="modal-subtitle">¥150000〜（税込）／ 初めてのデビュー・試験運用に最適</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-set-otameshi')" aria-label="閉じる">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-section-title">含まれる内容</p>
+      <ul class="modal-optlist">
+        <li><span>全身立ち絵（パーツ分けイラスト）</span></li>
+        <li><span>三面図</span></li>
+        <li><span>キービジュアル（表情差分3種）</span></li>
+      </ul>
+      <p class="modal-note">
+        ※ Live2Dモデリングは含まれません（イラスト一式のプランです）。<br>
+        ※ 内容の追加・変更はお気軽にご相談ください。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 基本セット -->
+<div class="modal-overlay" id="modal-set-kihon" onclick="closeOnOverlay(event,this)">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div>
+        <p class="modal-member-label">SET PLAN</p>
+        <h2 class="modal-title">基本セット</h2>
+        <p class="modal-subtitle">¥275000〜（税込）／ デビュー用基本プラン</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-set-kihon')" aria-label="閉じる">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-section-title">含まれる内容</p>
+      <ul class="modal-optlist">
+        <li><span>全身立ち絵（パーツ分けイラスト）</span></li>
+        <li><span>衣装差分4種</span></li>
+        <li><span>基本Live2Dモデリング（基本表情・動作・物理演算）</span></li>
+      </ul>
+      <p class="modal-note">
+        ※ イラストからLive2Dまで一括対応のスタンダードプランです。<br>
+        ※ 内容の追加・変更はお気軽にご相談ください。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- フルセット -->
+<div class="modal-overlay" id="modal-set-full" onclick="closeOnOverlay(event,this)">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div>
+        <p class="modal-member-label">SET PLAN</p>
+        <h2 class="modal-title">フルセット</h2>
+        <p class="modal-subtitle">¥345000〜（税込）／ 本格デビュー向け充実プラン</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-set-full')" aria-label="閉じる">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-section-title">含まれる内容</p>
+      <ul class="modal-optlist">
+        <li><span>全身立ち絵（パーツ分けイラスト）</span></li>
+        <li><span>衣装差分4種</span></li>
+        <li><span>基本Live2Dモデリング（基本表情・動作・物理演算）</span></li>
+        <li><span>三面図</span></li>
+        <li><span>キービジュアル</span></li>
+        <li><span>一枚絵（背景あり）</span></li>
+      </ul>
+      <p class="modal-note">
+        ※ 配信開始に必要な素材を幅広くカバーする一番人気の充実プランです。<br>
+        ※ 内容の追加・変更はお気軽にご相談ください。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 事務所・企業まとめ依頼 -->
+<div class="modal-overlay" id="modal-set-kigyo" onclick="closeOnOverlay(event,this)">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div>
+        <p class="modal-member-label">SET PLAN</p>
+        <h2 class="modal-title">事務所・企業まとめ依頼</h2>
+        <p class="modal-subtitle">要お見積もり ／ 複数名の一括依頼</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-set-kigyo')" aria-label="閉じる">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-section-title">対応内容</p>
+      <ul class="modal-optlist">
+        <li><span>3名以上の複数モデル制作</span></li>
+        <li><span>グループとしての世界観・統一感の演出</span></li>
+        <li><span>まとめ依頼による特別割引</span></li>
+      </ul>
+      <p class="modal-note">
+        ※ 人数・内容に応じて個別にお見積もりをお出しします。<br>
+        ※ まずはお問い合わせフォームよりご相談ください。
+      </p>
+    </div>
+  </div>
+</div>
+
 <!-- PRICING -->
 <section id="pricing">
   <div class="section-inner">
@@ -968,22 +1130,26 @@
         <thead><tr><th style="width:42%">メニュー</th><th style="width:30%">料金</th><th>納期目安</th></tr></thead>
         <tbody>
           <tr>
-            <td>L基本ive2Dモデリング<br><span style="font-size:0.7rem;color:rgba(250,246,240,0.35)">基本表情・動作・物理演算</span></td>
+            <td>基本Live2Dモデリング<br><span style="font-size:0.74rem;color:rgba(250,246,240,0.6)">基本表情・動作・物理演算</span></td>
             <td><span class="price-tag">¥160000〜</span><span class="price-note">税込</span></td>
             <td style="color:rgba(250,246,240,0.5);font-size:0.78rem">約6〜8週間</td>
           </tr>
           <tr>
-            <td>Live2Dモデリング＋<br><span style="font-size:0.7rem;color:rgba(250,246,240,0.35)">豊富な表情(パーフェクトシンク)・表情差分4種・体の位置XY</span></td>
+            <td>Live2Dモデリング＋<br><span style="font-size:0.74rem;color:rgba(250,246,240,0.6)">豊富な表情(パーフェクトシンク)・表情差分4種・体の位置XY</span></td>
             <td><span class="price-tag">¥220000〜</span><span class="price-note">税込</span></td>
             <td style="color:rgba(250,246,240,0.5);font-size:0.78rem">約8〜12週間</td>
           </tr>
           <tr>
-            <td>モデル修正・調整<br><span style="font-size:0.7rem;color:rgba(250,246,240,0.35)">他者制作モデルも応相談</span></td>
+            <td>モデル修正・調整<br><span style="font-size:0.74rem;color:rgba(250,246,240,0.6)">他者制作モデルも応相談</span></td>
             <td><span class="price-tag">要お見積もり</span></td>
             <td style="color:rgba(250,246,240,0.5);font-size:0.78rem">応相談</td>
           </tr>
         </tbody>
       </table>
+      <!-- Live2D 追加オプション一覧を開くボタン -->
+      <div class="live2d-option-cta">
+        <button class="detail-btn" onclick="openPriceModal('modal-live2d-options')">Live2D 追加オプション料金を見る</button>
+      </div>
     </div>
 
     <div class="pricing-panel reveal" id="tab-option">
@@ -1003,22 +1169,22 @@
         <thead><tr><th style="width:38%">プラン名</th><th style="width:32%">料金</th><th>内容</th></tr></thead>
         <tbody>
           <tr>
-            <td>Vtuberお試しセット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">初めてのデビュー、試験運用に最適</span></td>
+            <td>Vtuberお試しセット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">初めてのデビュー、試験運用に最適</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-otameshi')">詳細を見る</button></td>
             <td><span class="price-tag">¥150000〜</span><span class="price-note">税込</span></td>
             <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト）+ 三面図 + キービジュアル（表情差分3種）</td>
           </tr>
           <tr>
-            <td>基本セット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">デビュー用基本プラン</span></td>
+            <td>基本セット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">デビュー用基本プラン</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-kihon')">詳細を見る</button></td>
             <td><span class="price-tag">¥275000〜</span><span class="price-note">税込</span></td>
             <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト） + 衣装差分4種 + 基本Live2Dモデリング</td>
           </tr>
           <tr>
-            <td>フルセット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">本格デビュー向け充実プラン</span></td>
+            <td>フルセット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">本格デビュー向け充実プラン</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-full')">詳細を見る</button></td>
             <td><span class="price-tag">¥345000〜</span><span class="price-note">税込</span></td>
             <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト） + 衣装差分4種 + 基本Live2Dモデリング + 三面図 + キービジュアル + 一枚絵（背景あり）</td>
           </tr>
           <tr>
-            <td>事務所・企業まとめ依頼<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">複数名の一括依頼</span></td>
+            <td>事務所・企業まとめ依頼<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">複数名の一括依頼</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-kigyo')">詳細を見る</button></td>
             <td><span class="price-tag">要お見積もり</span></td>
             <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">3名以上の複数モデル制作、特別割引あり</td>
           </tr>
@@ -1028,9 +1194,9 @@
 
     <div class="pricing-footer reveal">
       <strong>※ 注意事項</strong><br>
-      ・料金はすべて税込表示です。詳細はお見積もりをご確認ください。
-      ・デザインの複雑さ・作業量によって金額が変動する場合があります。
-      ・お支払いは着手前に着手金（半額）、納品時に残金をお支払いいただきます。
+      ・料金はすべて税込表示です。詳細はお見積もりをご確認ください。<br>
+      ・デザインの複雑さ・作業量によって金額が変動する場合があります。<br>
+      ・お支払いは着手前に着手金（半額）、納品時に残金をお支払いいただきます。<br>
       ・著作権は納品後もクリエイターに帰属します。
     </div>
   </div>
@@ -1059,6 +1225,21 @@
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">事務所に所属しているVtuberでも依頼できますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>はい。個人活動・事務所所属どちらでも対応しております。複数名の一括依頼については特別料金でご提供できる場合もございます。</p></div></div>
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">支払い方法はどうなっていますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>ご依頼確定後、制作開始前に頭金（料金の半額）をお支払いいただき、納品完了時に残金をお支払いいただく形式です。詳細はご相談ください。</p></div></div>
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">既に持っているイラストをLive2D化してもらえますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>対応可能です。ただしLive2Dモデリングにはレイヤー分け（パーツ分け）が必要です。元のデータの状態によって追加作業が発生する場合があります。まずはデータをお見せいただき、お見積もりをお出しします。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     診断サイト誘導バナー
+     ▼ 診断サイトのURLが決まったら、下の href="#DIAGNOSIS_LINK"
+       の部分を実際のURLに書き換えてください（# のままでもエラーになりません）
+     ===================================================== -->
+<section style="background:#1A0D2E;padding:4rem 0">
+  <div class="diagnosis-banner reveal">
+    <div class="diagnosis-inner">
+      <h3>何を頼めばいいか迷っていませんか？</h3>
+      <p>「Vtuberを始めたいけど、何が必要かわからない」という方へ。<br>かんたんな質問に答えるだけで、あなたにぴったりのプランがわかる診断をご用意しました。</p>
+      <a href="#DIAGNOSIS_LINK" class="diagnosis-btn" target="_blank">✦ &nbsp; かんたんプラン診断をはじめる &nbsp; ✦</a>
     </div>
   </div>
 </section>
