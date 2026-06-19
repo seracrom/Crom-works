@@ -177,6 +177,12 @@
   .portfolio-item[data-category="live2d"] .portfolio-placeholder { background:linear-gradient(160deg,#0D1A2E,#0D2225); }
   .portfolio-item[data-category="design"] .portfolio-placeholder { background:linear-gradient(160deg,#1E2010,#0D1A0D); }
   .portfolio-item[data-category="video"] .portfolio-placeholder { background:linear-gradient(160deg,#2E1010,#1A0D0D); }
+
+  /* ポートフォリオ画像拡大表示（Live2Dはリンク先へ飛ぶため対象外） */
+  .pf-lightbox { position:fixed; inset:0; background:rgba(8,3,12,0.92); display:none; align-items:center; justify-content:center; z-index:9999; padding:4vw; cursor:zoom-out; }
+  .pf-lightbox.is-open { display:flex; }
+  .pf-lightbox img { max-width:92vw; max-height:90vh; object-fit:contain; box-shadow:0 20px 60px rgba(0,0,0,0.6); border:0.5px solid rgba(201,169,110,0.3); }
+  .pf-lightbox-close { position:absolute; top:1.5rem; right:2rem; font-size:1.8rem; color:var(--cream); background:none; border:none; cursor:pointer; line-height:1; }
   .video-badge { position:absolute; top:0.8rem; right:0.8rem; background:rgba(92,26,46,0.8); border:0.5px solid var(--wine-light); color:var(--wine-blush); font-size:0.6rem; letter-spacing:0.1em; padding:0.2rem 0.5rem; z-index:2; }
   .portfolio-note { text-align:center; margin-top:2rem; font-size:0.78rem; color:rgba(201,169,110,0.45); font-style:italic; font-family:var(--font-display); }
 
@@ -446,7 +452,8 @@
     <p class="hero-subtitle">もしもを、かたちに</p>
     <p class="hero-desc">
       <!-- 説明文はここを変更してください -->
-      VTuber兼Live2DモデラーのSera Crom監修、Vtuber制作グループ。<br>
+      VTuber兼Live2DモデラーのSera Crom監修<br>
+      Vtuber制作グループ。<br>
       あなたの個性を世界へ。
     </p>
     <div class="hero-buttons">
@@ -462,7 +469,7 @@
   <div class="section-inner">
     <div class="reveal">
       <p class="section-label" style="color:var(--wine)">ABOUT US</p>
-      <h2 class="section-title" style="color:var(--wine-deep)">安心して任せられる、<br>プロフェッショナルの集い</h2>
+      <h2 class="section-title" style="color:var(--wine-deep)">安心してお任せください</h2>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
@@ -537,7 +544,7 @@
       <button class="filter-btn" data-cat="illustration" onclick="filterPortfolio('illustration',this)">イラスト</button>
       <button class="filter-btn" data-cat="live2d" onclick="filterPortfolio('live2d',this)">Live2D</button>
       <button class="filter-btn" data-cat="design" onclick="filterPortfolio('design',this)">デザイン</button>
-      <button class="filter-btn" data-cat="video" onclick="filterPortfolio('video',this)">動画</button>
+      <button class="filter-btn" data-cat="video" onclick="filterPortfolio('video',this)">映像</button>
     </div>
     <!-- イラストレーター サブフィルター（イラストボタン選択時のみ表示） -->
     <div class="portfolio-illust-sub" id="portfolio-illust-sub">
@@ -599,7 +606,7 @@
         <div class="pf-cat-overlay"></div>
         <div class="pf-cat-label">
           <span class="pf-cat-by">CROM WORKS</span>
-          <div class="pf-cat-name">動画作品</div>
+          <div class="pf-cat-name">映像作品</div>
           <div class="pf-cat-dots"></div>
         </div>
         <span class="pf-cat-arrow">▼ 一覧へ</span>
@@ -719,21 +726,21 @@
     <div id="live2d-works-section" style="display:none">
       <div class="portfolio-grid portfolio-grid--live2d">
         <!-- あくま：href を実際のYouTube等URLに書き換えてください -->
-        <a href="#LINK_あくま" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
+        <a href="https://x.com/Sera_crm/status/2024766663250657729?s=20" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
           <img src="videos/あくま.gif" alt="あくま" loading="lazy">
-          <div class="video-badge">▶ YOU TUBE</div>
+          <div class="video-badge">▶ 詳細を見る</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>LIVE2D MODEL</span></div></div>
         </a>
-        <!-- さめ：href を実際のYouTube等URLに書き換えてください -->
-        <a href="#LINK_さめ" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
+        <!-- さめ -->
+        <a href="https://tsunagu.cloud/exist_products/106479" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
           <img src="videos/さめ.gif" alt="さめ" loading="lazy">
-          <div class="video-badge">▶ YOU TUBE</div>
+          <div class="video-badge">▶ 詳細を見る</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>LIVE2D MODEL</span></div></div>
         </a>
-        <!-- ティラノ：href を実際のYouTube等URLに書き換えてください -->
-        <a href="#LINK_ティラノ" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
+        <!-- ティラノ -->
+        <a href="https://tsunagu.cloud/exist_products/106475" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
           <img src="videos/ティラノ.gif" alt="ティラノ" loading="lazy">
-          <div class="video-badge">▶ YOU TUBE</div>
+          <div class="video-badge">▶ 詳細を見る</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>LIVE2D MODEL</span></div></div>
         </a>
       </div>
@@ -772,6 +779,12 @@
     <p class="portfolio-note reveal">✦ &nbsp; 実際の作品は随時更新中。詳しくはSNSもご覧ください。 &nbsp; ✦</p>
   </div>
 </section>
+
+<!-- ポートフォリオ画像の拡大表示用ライトボックス -->
+<div class="pf-lightbox" id="pf-lightbox" onclick="closePfLightbox()">
+  <button class="pf-lightbox-close" onclick="closePfLightbox()" aria-label="閉じる">✕</button>
+  <img id="pf-lightbox-img" src="" alt="">
+</div>
 
 <!-- MEMBERS -->
 <section id="members">
@@ -1078,7 +1091,7 @@
       <ul class="modal-optlist">
         <li><span>全身立ち絵（パーツ分けイラスト）</span></li>
         <li><span>三面図</span></li>
-        <li><span>キービジュアル（表情差分3種）</span></li>
+        <li><span>キービジュアル</span></li>
       </ul>
       <p class="modal-note">
         ※ Live2Dモデリングは含まれません（イラスト一式のプランです）。<br>
@@ -1095,7 +1108,7 @@
       <div>
         <p class="modal-member-label">SET PLAN</p>
         <h2 class="modal-title">基本セット</h2>
-        <p class="modal-subtitle">¥275000〜（税込）／ デビュー用基本プラン</p>
+        <p class="modal-subtitle">¥270000〜（税込）／ デビュー用基本プラン</p>
       </div>
       <button class="modal-close" onclick="closeModal('modal-set-kihon')" aria-label="閉じる">✕</button>
     </div>
@@ -1103,7 +1116,7 @@
       <p class="modal-section-title">含まれる内容</p>
       <ul class="modal-optlist">
         <li><span>全身立ち絵（パーツ分けイラスト）</span></li>
-        <li><span>衣装差分4種</span></li>
+        <li><span>表情差分4種</span></li>
         <li><span>基本Live2Dモデリング（基本表情・動作・物理演算）</span></li>
       </ul>
       <p class="modal-note">
@@ -1121,7 +1134,7 @@
       <div>
         <p class="modal-member-label">SET PLAN</p>
         <h2 class="modal-title">フルセット</h2>
-        <p class="modal-subtitle">¥345000〜（税込）／ 本格デビュー向け充実プラン</p>
+        <p class="modal-subtitle">¥355000〜（税込）／ 本格デビュー向け充実プラン</p>
       </div>
       <button class="modal-close" onclick="closeModal('modal-set-full')" aria-label="閉じる">✕</button>
     </div>
@@ -1129,7 +1142,7 @@
       <p class="modal-section-title">含まれる内容</p>
       <ul class="modal-optlist">
         <li><span>全身立ち絵（パーツ分けイラスト）</span></li>
-        <li><span>衣装差分4種</span></li>
+        <li><span>表情差分4種</span></li>
         <li><span>基本Live2Dモデリング（基本表情・動作・物理演算）</span></li>
         <li><span>三面図</span></li>
         <li><span>キービジュアル</span></li>
@@ -1231,17 +1244,17 @@
           <tr>
             <td>Vtuberお試しセット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">初めてのデビュー、試験運用に最適</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-otameshi')">詳細を見る</button></td>
             <td><span class="price-tag">¥150000〜</span><span class="price-note">税込</span></td>
-            <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト）+ 三面図 + キービジュアル（表情差分3種）</td>
+            <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト）+ 三面図 + キービジュアル</td>
           </tr>
           <tr>
             <td>基本セット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">デビュー用基本プラン</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-kihon')">詳細を見る</button></td>
-            <td><span class="price-tag">¥275000〜</span><span class="price-note">税込</span></td>
-            <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト） + 衣装差分4種 + 基本Live2Dモデリング</td>
+            <td><span class="price-tag">¥270000〜</span><span class="price-note">税込</span></td>
+            <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト） + 表情差分4種 + 基本Live2Dモデリング</td>
           </tr>
           <tr>
             <td>フルセット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">本格デビュー向け充実プラン</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-full')">詳細を見る</button></td>
-            <td><span class="price-tag">¥345000〜</span><span class="price-note">税込</span></td>
-            <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト） + 衣装差分4種 + 基本Live2Dモデリング + 三面図 + キービジュアル + 一枚絵（背景あり）</td>
+            <td><span class="price-tag">¥355000〜</span><span class="price-note">税込</span></td>
+            <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト） + 表情差分4種 + 基本Live2Dモデリング + 三面図 + キービジュアル + 一枚絵（背景あり）</td>
           </tr>
           <tr>
             <td>事務所・企業まとめ依頼<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">複数名の一括依頼</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-kigyo')">詳細を見る</button></td>
@@ -1630,6 +1643,23 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
   if(!open) item.classList.add('open');
 }
+
+// ================================================================
+// ポートフォリオ画像の拡大表示（Live2Dはリンク先へ飛ぶので対象外）
+// ================================================================
+function closePfLightbox(){
+  document.getElementById('pf-lightbox').classList.remove('is-open');
+}
+document.addEventListener('click', function(e){
+  const item = e.target.closest('.portfolio-item');
+  if(!item || item.tagName === 'A' || item.dataset.category === 'live2d') return;
+  const img = item.querySelector('img.pf-slide-active') || item.querySelector('img');
+  if(!img || !img.src || img.style.display === 'none') return;
+  const lb = document.getElementById('pf-lightbox');
+  document.getElementById('pf-lightbox-img').src = img.src;
+  document.getElementById('pf-lightbox-img').alt = img.alt || '';
+  lb.classList.add('is-open');
+});
 
 // ================================================================
 // PORTFOLIO FILTER
