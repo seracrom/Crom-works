@@ -59,6 +59,7 @@
   .nav-logo { font-family:var(--font-display); font-size:1.5rem; font-weight:400; color:var(--gold); letter-spacing:0.08em; text-decoration:none; }
   .nav-links { display:flex; gap:2rem; list-style:none; }
   .nav-links a { font-size:0.75rem; letter-spacing:0.15em; color:var(--gold-light); text-decoration:none; opacity:0.8; transition:opacity 0.2s; font-weight:300; }
+  .nav-link-contact { display:none; } /* スマホメニューを開いたときだけ表示 */
   .nav-links a:hover { opacity:1; }
   .nav-cta { background:transparent; border:0.5px solid var(--gold); color:var(--gold); padding:0.5rem 1.2rem; font-family:var(--font-body); font-size:0.7rem; letter-spacing:0.15em; cursor:pointer; transition:all 0.3s; text-decoration:none; }
   .nav-cta:hover { background:var(--gold); color:var(--wine-deep); }
@@ -293,6 +294,12 @@
   .diagnosis-btn { display:inline-block; background:var(--gold); color:var(--wine-deep); padding:0.9rem 2.6rem; font-family:var(--font-body); font-size:0.8rem; letter-spacing:0.15em; text-decoration:none; transition:all 0.3s; border:none; cursor:pointer; }
   .diagnosis-btn:hover { background:var(--gold-light); }
 
+  /* セクション途中の依頼ボタン（CTA） */
+  .section-cta { text-align:center; margin-top:3.5rem; }
+  .section-cta a { display:inline-block; background:var(--wine); border:0.5px solid var(--wine-light); color:var(--cream); padding:0.9rem 2.8rem; font-size:0.75rem; letter-spacing:0.2em; text-decoration:none; transition:background 0.3s; }
+  .section-cta a:hover { background:var(--wine-mid); }
+  .section-cta p { font-size:0.7rem; color:rgba(201,169,110,0.45); margin-top:0.8rem; font-weight:300; }
+
   /* SCHEDULE（制作スケジュール・受付状況） */
   #schedule::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 20%,rgba(92,26,46,0.18) 0%,transparent 55%); pointer-events:none; }
   .sched-status { display:flex; gap:1.2rem; flex-wrap:wrap; margin-top:2.5rem; }
@@ -325,6 +332,22 @@
     #commission-calendar .fc-toolbar.fc-header-toolbar { flex-direction:column; gap:0.6rem; }
     #commission-calendar .fc-toolbar-title { font-size:1.2rem; }
   }
+
+  /* FLOW（制作の流れ） */
+  #flow { background: var(--cream); }
+  .flow-list { margin-top:3rem; max-width:780px; margin-left:auto; margin-right:auto; position:relative; }
+  .flow-step { display:flex; gap:1.8rem; padding:0 0 2.8rem; position:relative; }
+  .flow-step:last-child { padding-bottom:0; }
+  .flow-step::before { content:''; position:absolute; left:1.35rem; top:3rem; bottom:0.4rem; width:0.5px; background:linear-gradient(to bottom, rgba(92,26,46,0.3), rgba(92,26,46,0.08)); }
+  .flow-step:last-child::before { display:none; }
+  .flow-num { flex-shrink:0; width:2.7rem; height:2.7rem; border:0.5px solid var(--wine-mid); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:1rem; color:var(--wine); background:var(--cream); position:relative; z-index:1; }
+  .flow-body h3 { font-family:var(--font-display); font-size:1.25rem; color:var(--wine-deep); font-weight:400; margin-bottom:0.5rem; padding-top:0.5rem; }
+  .flow-body p { font-size:0.85rem; color:#5A3040; line-height:1.95; font-weight:300; }
+  .flow-point { display:inline-block; margin-top:0.6rem; font-size:0.72rem; color:var(--gold-dark); background:rgba(201,169,110,0.12); border:0.5px solid rgba(201,169,110,0.35); padding:0.3rem 0.8rem; letter-spacing:0.05em; line-height:1.7; }
+  .flow-cta { text-align:center; margin-top:3.5rem; }
+  .flow-cta .btn-flow { display:inline-block; background:var(--wine); color:var(--cream); padding:0.9rem 2.8rem; text-decoration:none; font-size:0.75rem; letter-spacing:0.2em; transition:background 0.3s; }
+  .flow-cta .btn-flow:hover { background:var(--wine-mid); }
+  @media(max-width:600px){ .flow-step { gap:1.1rem; } .flow-num { width:2.2rem; height:2.2rem; font-size:0.85rem; } .flow-step::before { left:1.1rem; } }
 
   /* FAQ */
   #faq { background:var(--cream); }
@@ -376,6 +399,7 @@
   @media(max-width:900px){
     .nav-links,.nav-cta{display:none}
     .nav-hamburger{display:flex}
+    .nav-link-contact{display:block;border-top:0.5px solid rgba(201,169,110,0.25);padding-top:1.2rem}
     .about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}
     .services-grid{grid-template-columns:repeat(2,1fr)}
     .portfolio-grid{grid-template-columns:repeat(2,1fr)}
@@ -407,6 +431,18 @@
     .filter-btn{padding:0.35rem 0.8rem;font-size:0.6rem}
     .filter-sub-btn{padding:0.25rem 0.7rem;font-size:0.55rem}
     .contact-grid{grid-template-columns:1fr}
+    /* 料金表：スマホでは横スクロールで見切れを防ぐ */
+    .pricing-panel{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .pricing-table{min-width:520px}
+    .pricing-table td{padding:0.7rem 0.6rem;font-size:0.82rem}
+    /* 料金モーダル内の表も同様に */
+    .modal-body{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .modal-table{min-width:420px}
+    /* 診断バナー：余白を詰めて文字を読みやすく */
+    .diagnosis-banner{padding:0 1.2rem}
+    .diagnosis-inner{padding:1.8rem 1.2rem}
+    /* フッター余白 */
+    footer{padding:2.5rem 1.5rem}
   }
 </style>
 </head>
@@ -421,8 +457,11 @@
     <li><a href="#portfolio">ポートフォリオ</a></li>
     <li><a href="#members">メンバー</a></li>
     <li><a href="#pricing">料金</a></li>
+    <li><a href="#flow">制作の流れ</a></li>
     <li><a href="#schedule">受付状況</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <!-- スマホメニュー専用のお問い合わせリンク（PCでは右上ボタンがあるため非表示） -->
+    <li class="nav-link-contact"><a href="#contact" style="color:var(--gold)">✦ お問い合わせ</a></li>
   </ul>
   <a href="#contact" class="nav-cta">お問い合わせ</a>
   <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
@@ -446,14 +485,14 @@
   <div class="hero-featured-badge" id="featured-badge">✦ 特集作品を展示中</div>
 
   <div class="hero-content">
-    <p class="hero-eyebrow">✦ Vtuberモデル制作グループ ✦</p>
+    <p class="hero-eyebrow">✦ VTuberモデル制作グループ ✦</p>
     <!-- タイトル・キャッチコピーはここを変更してください -->
     <h1 class="hero-title">Crom<br><em>Works</em></h1>
     <p class="hero-subtitle">もしもを、かたちに</p>
     <p class="hero-desc">
       <!-- 説明文はここを変更してください -->
       VTuber兼Live2DモデラーのSera Crom監修<br>
-      Vtuber制作グループ。<br>
+      VTuber制作グループ。<br>
       あなたの個性を世界へ。
     </p>
     <div class="hero-buttons">
@@ -474,13 +513,13 @@
     <div class="about-grid">
       <div class="about-text reveal">
         <!-- グループ紹介文はここを変更してください -->
-        <p>Crom Worksは、Vtuber兼Live2DモデラーのSera Cromが監修する、イラスト、Live2D制作グループです。私たちは一人ひとりのVtuberの個性と魅力を丁寧に引き出します。</p>
+        <p>Crom Worksは、VTuber兼Live2DモデラーのSera Cromが監修する、イラスト、Live2D制作グループです。私たちは一人ひとりのVTuberの個性と魅力を丁寧に引き出します。</p>
         <p>依頼から納品まで一貫したサポート体制を整えており、初めての方でも安心してご依頼いただけます。</p>
         <ul class="about-features">
-          <li>現役Vtuber兼Live2Dモデラーによる監修・クオリティチェックで、使いやすさも保証</li>
+          <li>現役VTuber兼Live2Dモデラーによる監修・クオリティチェックで、使いやすさも保証</li>
           <li>イラストからLive2Dまで、一括でご依頼可能</li>
           <li>修正対応やアフターサポートも充実。納品後も安心</li>
-          <li>個人Vtuberから事務所・企業案件まで幅広く対応</li>
+          <li>個人VTuberから事務所・企業案件まで幅広く対応</li>
         </ul>
       </div>
       <div class="about-visual reveal">
@@ -517,7 +556,7 @@
     <div class="reveal">
       <p class="section-label" style="color:var(--gold)">SERVICES</p>
       <h2 class="section-title" style="color:var(--star-white)">提供サービス</h2>
-      <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);font-weight:300;line-height:1.9;max-width:560px">イラスト制作からLive2Dモデリングまで、Vtuberデビューに必要なすべてをご提供します。</p>
+      <p style="font-size:0.85rem;color:rgba(250,246,240,0.5);font-weight:300;line-height:1.9;max-width:560px">イラスト制作からLive2Dモデリングまで、VTuberデビューに必要なすべてをご提供します。</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal"><span class="service-icon">🎨</span><h3 class="service-name">キャラクターデザイン</h3><p class="service-desc">オリジナルキャラクターのコンセプトデザインから、リファレンスシートの制作まで。あなたの理想を形にします。</p></div>
@@ -543,8 +582,9 @@
       <button class="filter-btn active" data-cat="all" onclick="filterPortfolio('all',this)">すべて</button>
       <button class="filter-btn" data-cat="illustration" onclick="filterPortfolio('illustration',this)">イラスト</button>
       <button class="filter-btn" data-cat="live2d" onclick="filterPortfolio('live2d',this)">Live2D</button>
-      <button class="filter-btn" data-cat="design" onclick="filterPortfolio('design',this)">デザイン</button>
-      <button class="filter-btn" data-cat="video" onclick="filterPortfolio('video',this)">映像</button>
+      <!-- ※作品を追加したら style="display:none" を外して再表示してください -->
+      <button class="filter-btn" data-cat="design" onclick="filterPortfolio('design',this)" style="display:none">デザイン</button>
+      <button class="filter-btn" data-cat="video" onclick="filterPortfolio('video',this)" style="display:none">映像</button>
     </div>
     <!-- イラストレーター サブフィルター（イラストボタン選択時のみ表示） -->
     <div class="portfolio-illust-sub" id="portfolio-illust-sub">
@@ -590,7 +630,8 @@
         <span class="pf-cat-arrow">▼ 一覧へ</span>
       </div>
 
-      <div class="pf-cat-tile" id="pf-cat-design" data-pf-cat="design" onclick="selectCategory('design')">
+      <!-- ※作品を追加したら style="display:none" を外して再表示してください -->
+      <div class="pf-cat-tile" id="pf-cat-design" data-pf-cat="design" onclick="selectCategory('design')" style="display:none">
         <div class="pf-cat-preview"></div>
         <div class="pf-cat-overlay"></div>
         <div class="pf-cat-label">
@@ -601,7 +642,7 @@
         <span class="pf-cat-arrow">▼ 一覧へ</span>
       </div>
 
-      <div class="pf-cat-tile" id="pf-cat-video" data-pf-cat="video" onclick="selectCategory('video')">
+      <div class="pf-cat-tile" id="pf-cat-video" data-pf-cat="video" onclick="selectCategory('video')" style="display:none">
         <div class="pf-cat-preview"></div>
         <div class="pf-cat-overlay"></div>
         <div class="pf-cat-label">
@@ -777,6 +818,11 @@
     </div>
 
     <p class="portfolio-note reveal">✦ &nbsp; 実際の作品は随時更新中。詳しくはSNSもご覧ください。 &nbsp; ✦</p>
+
+    <!-- ポートフォリオ直下の依頼ボタン -->
+    <div class="section-cta reveal">
+      <a href="#contact">✦ &nbsp; まずは相談してみる &nbsp; ✦</a>
+    </div>
   </div>
 </section>
 
@@ -810,8 +856,8 @@
         <div class="member-role-badge">グループ監修</div>
         <div class="member-avatar"><img src="images/icon/seracrom.jpg" alt="Sera Crom"></div>
         <h3 class="member-name">Sera Crom</h3><!-- ← 変更 -->
-        <p class="member-role">Vtuber / Live2Dモデラー</p>
-        <p class="member-desc">グループ監修兼Lve3D担当。Vtuberとして活動しながらLive2Dモデラーとしても活動。本スタジオの代表。</p><!-- ← 変更 -->
+        <p class="member-role">VTuber / Live2Dモデラー</p>
+        <p class="member-desc">グループ監修兼Live2D担当。VTuberとして活動しながらLive2Dモデラーとしても活動。本スタジオの代表。</p><!-- ← 変更 -->
         <div class="member-sns">
           <a href="https://x.com/Sera_crm" class="sns-btn" target="_blank">𝕏 Twitter</a><!-- ← URL変更 -->
           <a href="https://www.youtube.com/@SeraCrom" class="sns-btn" target="_blank">▶ YouTube</a>
@@ -825,7 +871,7 @@
         <div class="member-avatar"><img src="images/icon/chama.png" alt="ちゃま"></div>
         <h3 class="member-name">ちゃま</h3><!-- ← 変更 -->
         <p class="member-role">イラストレーター</p>
-        <p class="member-desc">キャラクターデザイン、Vtuberイラスト、一枚絵。繊細なタッチと豊かな表現力で、個性あふれるキャラクターを生み出します。</p><!-- ← 変更 -->
+        <p class="member-desc">キャラクターデザイン、VTuberイラスト、一枚絵。繊細なタッチと豊かな表現力で、個性あふれるキャラクターを生み出します。</p><!-- ← 変更 -->
         <div class="member-sns">
           <a href="https://x.com/chama_zz58" class="sns-btn" target="_blank">𝕏 Twitter</a>
           <a href="https://chamalab.net/" class="sns-btn" target="_blank">◆ HP</a>
@@ -1081,7 +1127,7 @@
     <div class="modal-header">
       <div>
         <p class="modal-member-label">SET PLAN</p>
-        <h2 class="modal-title">Vtuberお試しセット</h2>
+        <h2 class="modal-title">VTuberお試しセット</h2>
         <p class="modal-subtitle">¥150000〜（税込）／ 初めてのデビュー・試験運用に最適</p>
       </div>
       <button class="modal-close" onclick="closeModal('modal-set-otameshi')" aria-label="閉じる">✕</button>
@@ -1242,7 +1288,7 @@
         <thead><tr><th style="width:38%">プラン名</th><th style="width:32%">料金</th><th>内容</th></tr></thead>
         <tbody>
           <tr>
-            <td>Vtuberお試しセット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">初めてのデビュー、試験運用に最適</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-otameshi')">詳細を見る</button></td>
+            <td>VTuberお試しセット<br><span style="font-size:0.7rem;color:rgba(201,169,110,0.45)">初めてのデビュー、試験運用に最適</span><br><button class="detail-btn" onclick="openPriceModal('modal-set-otameshi')">詳細を見る</button></td>
             <td><span class="price-tag">¥150000〜</span><span class="price-note">税込</span></td>
             <td style="color:rgba(250,246,240,0.55);font-size:0.78rem;line-height:1.8">全身立ち絵（パーツ分けイラスト）+ 三面図 + キービジュアル</td>
           </tr>
@@ -1271,6 +1317,75 @@
       ・デザインの複雑さ・作業量によって金額が変動する場合があります。<br>
       ・お支払いは着手前に着手金（半額）、納品時に残金をお支払いいただきます。<br>
       ・著作権は納品後もクリエイターに帰属します。
+    </div>
+
+    <!-- 料金表直下の依頼ボタン -->
+    <div class="section-cta reveal">
+      <a href="#contact">✦ &nbsp; まずは相談してみる &nbsp; ✦</a>
+      <p>※ お見積もりだけのご相談も歓迎です</p>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW（制作の流れ） -->
+<section id="flow">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label" style="color:var(--wine)">FLOW</p>
+      <h2 class="section-title" style="color:var(--wine-deep)">制作の流れ</h2>
+      <p style="font-size:0.85rem;color:#5A3040;font-weight:300;line-height:1.9;max-width:560px">お問い合わせから納品まで、各工程でご確認いただきながら進めます。初めての方もご安心ください。</p>
+    </div>
+    <div class="flow-list">
+      <div class="flow-step reveal">
+        <div class="flow-num">01</div>
+        <div class="flow-body">
+          <h3>お問い合わせ</h3>
+          <p>依頼フォーム・メール・XのDMからご連絡ください。キャラクターのイメージや内容がまだ固まっていない段階でも大丈夫です。「こんな感じにしたい」だけでもお気軽にどうぞ。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-num">02</div>
+        <div class="flow-body">
+          <h3>ヒアリング・お見積もり</h3>
+          <p>ご希望の内容・納期・ご予算を伺い、正式なお見積もりと制作スケジュールをご提示します。ご納得いただけたら、着手金（料金の半額）のお支払いで制作開始です。</p>
+          <span class="flow-point">✦ 金額と納期はこの時点で確定。あとから勝手に増えることはありません</span>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-num">03</div>
+        <div class="flow-body">
+          <h3>キャラクターデザイン・ラフ</h3>
+          <p>ヒアリング内容をもとにデザイン案・ラフをご提案します。ポーズや表情、衣装の方向性をここでしっかりすり合わせます。</p>
+          <span class="flow-point">✦ ここで確認：デザインの方向性・構図</span>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-num">04</div>
+        <div class="flow-body">
+          <h3>イラスト制作（線画・彩色）</h3>
+          <p>ラフ確定後、線画・彩色と進めます。工程ごとに進捗をお見せし、都度修正のご要望を伺います。Live2D用の場合はパーツ分けまで担当イラストレーターが行います。</p>
+          <span class="flow-point">✦ ここで確認：線画・配色（各段階でチェックいただけます）</span>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-num">05</div>
+        <div class="flow-body">
+          <h3>Live2Dモデリング</h3>
+          <p>表情・動作・物理演算をつけてモデルを制作します。現役VTuberでもある監修者が「配信での使いやすさ」を含めてクオリティチェックを行います。</p>
+          <span class="flow-point">✦ ここで確認：動作サンプル動画で動きをチェック</span>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-num">06</div>
+        <div class="flow-body">
+          <h3>納品・アフターサポート</h3>
+          <p>残金のお支払い確認後、データ一式を納品します。VTubeStudioへの導入設定は無料でサポート。納品後の微調整や表情・衣装の追加もご相談いただけます。</p>
+          <span class="flow-point">✦ 納品後も安心のアフターサポート付き</span>
+        </div>
+      </div>
+    </div>
+    <div class="flow-cta reveal">
+      <a href="#contact" class="btn-flow">✦ &nbsp; まずは相談してみる &nbsp; ✦</a>
     </div>
   </div>
 </section>
@@ -1324,12 +1439,12 @@
       <h2 class="section-title" style="color:var(--wine-deep)">よくあるご質問</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">初めてVtuberとしてデビューするのですが、何から相談すればいいですか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>まずはお問い合わせフォーム、またはメール、XのDMよりご連絡ください。キャラクターのコンセプト・イメージがまだ固まっていない段階でも大丈夫です。メンバーとのヒアリングを通じて、一緒に理想のVtuberを作り上げていきます。</p></div></div>
+      <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">初めてVTuberとしてデビューするのですが、何から相談すればいいですか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>まずはお問い合わせフォーム、またはメール、XのDMよりご連絡ください。キャラクターのコンセプト・イメージがまだ固まっていない段階でも大丈夫です。メンバーとのヒアリングを通じて、一緒に理想のVTuberを作り上げていきます。</p></div></div>
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">イラストレーターを指名して依頼できますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>はい、担当イラストレーターの指名が可能です。各メンバーのポートフォリオやスタイルを見てご指定ください。ただし、担当者の空き状況によっては対応までお時間をいただく場合があります。</p></div></div>
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">イラストとLive2Dは別々のクリエイターに頼めますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>はい。グループ内でのワンストップ依頼も、イラストのみ・Live2Dのみのご依頼も対応しております。グループ内で連携するためスムーズに進行します。</p></div></div>
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">納期はどのくらいですか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>料金表に記載の目安を参考にしてください。ご依頼内容・込み具合によって変動する場合があります。お急ぎの場合は特急オプションもございますので、まずはご相談ください。</p></div></div>
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">途中で修正を依頼することはできますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>制作中は定期的に進捗をお見せし、都度ご確認いただけます。進捗ごとに修正点の確認をいただき、ラフ・線画・彩色段階などで細かいすり合わせが可能です。</p></div></div>
-      <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">事務所に所属しているVtuberでも依頼できますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>はい。個人活動・事務所所属どちらでも対応しております。複数名の一括依頼については特別料金でご提供できる場合もございます。</p></div></div>
+      <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">事務所に所属しているVTuberでも依頼できますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>はい。個人活動・事務所所属どちらでも対応しております。複数名の一括依頼については特別料金でご提供できる場合もございます。</p></div></div>
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">支払い方法はどうなっていますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>ご依頼確定後、制作開始前に頭金（料金の半額）をお支払いいただき、納品完了時に残金をお支払いいただく形式です。詳細はご相談ください。</p></div></div>
       <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">既に持っているイラストをLive2D化してもらえますか？<span class="faq-toggle">+</span></button><div class="faq-answer"><p>対応可能です。ただしLive2Dモデリングにはレイヤー分け（パーツ分け）が必要です。元のデータの状態によって追加作業が発生する場合があります。まずはデータをお見せいただき、お見積もりをお出しします。</p></div></div>
     </div>
@@ -1345,7 +1460,7 @@
   <div class="diagnosis-banner reveal">
     <div class="diagnosis-inner">
       <h3>何を頼めばいいか迷っていませんか？</h3>
-      <p>「Vtuberを始めたいけど、何が必要かわからない」という方へ。<br>かんたんな質問に答えるだけで、あなたにぴったりのプランがわかる診断をご用意しました。</p>
+      <p>「VTuberを始めたいけど、何が必要かわからない」という方へ。<br>かんたんな質問に答えるだけで、あなたにぴったりのプランがわかる診断をご用意しました。</p>
       <a href="https://seracrom.github.io/VTuber-/" class="diagnosis-btn" target="_blank">✦ &nbsp; かんたんプラン診断をはじめる &nbsp; ✦</a>
     </div>
   </div>
@@ -1388,7 +1503,7 @@
 <!-- FOOTER -->
 <footer>
   <p class="footer-logo">Crom Works</p>
-  <p class="footer-copy">© 2025 Crom Works. All rights reserved.</p><!-- 年を変更してください -->
+  <p class="footer-copy">© 2026 Crom Works. All rights reserved.</p><!-- 年を変更してください -->
 </footer>
 
 <!-- SCRIPTS -->
@@ -1917,9 +2032,17 @@ function toggleMenu(){
   const links=document.querySelector('.nav-links');
   if(!links) return;
   const shown=links.style.display==='flex';
-  if(shown){ links.style.display='none'; return; }
+  if(shown){ closeMenu(); return; }
   Object.assign(links.style,{display:'flex',flexDirection:'column',position:'fixed',top:'60px',left:'0',right:'0',background:'rgba(13,5,16,0.97)',padding:'2rem',zIndex:'99',gap:'1.5rem'});
 }
+function closeMenu(){
+  const links=document.querySelector('.nav-links');
+  if(links) links.removeAttribute('style');
+}
+// スマホ：メニュー内のリンクをタップしたら自動で閉じる
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',closeMenu));
+// 画面を広げたときにスマホメニューの表示状態をリセット
+window.addEventListener('resize',()=>{ if(window.innerWidth>900) closeMenu(); });
 window.addEventListener('scroll',()=>{
   document.getElementById('navbar').style.background=window.scrollY>50?'rgba(13,5,16,0.95)':'rgba(13,5,16,0.7)';
 });
