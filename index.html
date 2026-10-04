@@ -179,6 +179,26 @@
   .portfolio-item[data-category="design"] .portfolio-placeholder { background:linear-gradient(160deg,#1E2010,#0D1A0D); }
   .portfolio-item[data-category="video"] .portfolio-placeholder { background:linear-gradient(160deg,#2E1010,#1A0D0D); }
 
+  /* セクション冒頭リード文 */
+  .section-lead { font-size:0.82rem; color:rgba(250,246,240,0.5); font-weight:300; line-height:1.9; margin-top:0.6rem; }
+
+  /* イラスト料金タブ 2カラムレイアウト */
+  .illust-pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:0.5rem; }
+  .illust-col-label { font-family:var(--font-body); font-size:0.62rem; letter-spacing:0.25em; color:var(--wine-mid); margin-bottom:0.8rem; font-weight:300; }
+  @media(max-width:700px){ .illust-pricing-grid { grid-template-columns:1fr; } }
+
+  /* ヒーロー サービス3点 */
+  .hero-services { display:flex; align-items:center; gap:0; margin:1.6rem 0 2rem; flex-wrap:wrap; justify-content:center; }
+  .hero-svc-item { display:flex; flex-direction:column; align-items:center; gap:0.3rem; padding:0 1.8rem; }
+  .hero-svc-icon { font-size:0.55rem; color:var(--wine-mid); }
+  .hero-svc-name { font-family:var(--font-body); font-size:0.68rem; letter-spacing:0.18em; color:rgba(250,246,240,0.65); font-weight:300; white-space:nowrap; }
+  .hero-svc-price { font-family:var(--font-display); font-size:1.05rem; color:var(--gold-light); font-weight:400; }
+  .hero-svc-sep { width:0.5px; height:2.4rem; background:rgba(201,169,110,0.22); }
+  @media(max-width:600px){
+    .hero-svc-item { padding:0 1rem; }
+    .hero-svc-price { font-size:0.9rem; }
+  }
+
   /* ポートフォリオ画像拡大表示（Live2Dはリンク先へ飛ぶため対象外） */
   .pf-lightbox { position:fixed; inset:0; background:rgba(8,3,12,0.92); display:none; align-items:center; justify-content:center; z-index:9999; padding:4vw; cursor:zoom-out; }
   .pf-lightbox.is-open { display:flex; }
@@ -495,8 +515,30 @@
       VTuber制作グループ。<br>
       あなたの個性を世界へ。
     </p>
+
+    <div class="hero-services">
+      <div class="hero-svc-item">
+        <span class="hero-svc-icon">✦</span>
+        <span class="hero-svc-name">イラスト制作</span>
+        <span class="hero-svc-price">¥10,000〜</span>
+      </div>
+      <div class="hero-svc-sep"></div>
+      <div class="hero-svc-item">
+        <span class="hero-svc-icon">✦</span>
+        <span class="hero-svc-name">Live2Dモデリング</span>
+        <span class="hero-svc-price">¥160,000〜</span>
+      </div>
+      <div class="hero-svc-sep"></div>
+      <div class="hero-svc-item">
+        <span class="hero-svc-icon">✦</span>
+        <span class="hero-svc-name">セットプラン</span>
+        <span class="hero-svc-price">¥150,000〜</span>
+      </div>
+    </div>
+
     <div class="hero-buttons">
       <a href="#portfolio" class="btn-primary"><span>ポートフォリオを見る</span></a>
+      <a href="#pricing" class="btn-outline">料金を見る</a>
       <a href="#contact" class="btn-outline">依頼する</a>
     </div>
   </div>
@@ -575,6 +617,7 @@
     <div class="reveal">
       <p class="section-label" style="color:var(--wine-light)">PORTFOLIO</p>
       <h2 class="section-title" style="color:var(--star-white)">ポートフォリオ</h2>
+      <p class="section-lead">Crom Worksのイラスト・Live2D作品をカテゴリー別にご覧いただけます。<br>気になる作品はクリックで拡大表示できます。</p>
     </div>
 
     <!-- フィルター切替（ポートフォリオ見出し直下） -->
@@ -767,13 +810,13 @@
     <div id="live2d-works-section" style="display:none">
       <div class="portfolio-grid portfolio-grid--live2d">
         <!-- あくま：href を実際のYouTube等URLに書き換えてください -->
-        <a href="https://tsunagu.cloud/exist_products/106479" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
+        <a href="https://nizima.com/Item/DetailItem/142063" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
           <img src="videos/あくま.gif" alt="あくま" loading="lazy">
           <div class="video-badge">▶ 詳細を見る</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>LIVE2D MODEL</span></div></div>
         </a>
         <!-- さめ -->
-        <a href="https://tsunagu.cloud/exist_products/106475" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
+        <a href="https://nizima.com/Item/DetailItem/140574" target="_blank" class="portfolio-item portfolio-item--square" data-category="live2d" style="text-decoration:none">
           <img src="videos/さめ.gif" alt="さめ" loading="lazy">
           <div class="video-badge">▶ 詳細を見る</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>LIVE2D MODEL</span></div></div>
@@ -801,19 +844,19 @@
          画像(サムネ)追加: images/movie/01.jpg, 02.jpg ...
          動画を直接埋める場合: img → video タグに差し替え -->
     <div id="video-works-section" style="display:none">
-      <div class="portfolio-grid">
-        <div class="portfolio-item" data-category="video">
-          <div class="portfolio-placeholder"><span>🎬</span></div>
-          <img src="images/movie/01.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
-          <div class="video-badge">▶ VIDEO</div>
+      <div class="portfolio-grid portfolio-grid--live2d">
+        <!-- よるな -->
+        <a href="https://x.com/CromWorks/status/2099118654105465063?s=20" target="_blank" class="portfolio-item portfolio-item--square" data-category="video" style="text-decoration:none">
+          <img src="videos/よるな.webp" alt="よるな" loading="lazy">
+          <div class="video-badge">▶ 詳細を見る</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>VIDEO</span></div></div>
-        </div>
-        <div class="portfolio-item" data-category="video">
-          <div class="portfolio-placeholder"><span>🎬</span></div>
-          <img src="images/movie/02.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
-          <div class="video-badge">▶ VIDEO</div>
+        </a>
+        <!-- てんし -->
+        <a href="https://nizima.com/Item/DetailItem/145313" target="_blank" class="portfolio-item portfolio-item--square" data-category="video" style="text-decoration:none">
+          <img src="videos/てんし.webp" alt="てんし" loading="lazy">
+          <div class="video-badge">▶ 詳細を見る</div>
           <div class="portfolio-overlay"><div class="portfolio-info"><h4></h4><span>VIDEO</span></div></div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -1233,18 +1276,57 @@
   <div class="section-inner">
     <div class="reveal">
       <p class="section-label" style="color:var(--gold)">PRICING</p>
-      <h2 class="section-title" style="color:var(--star-white)">グループ共通 料金表</h2>
-      <p style="font-size:0.78rem;color:rgba(201,169,110,0.4);font-weight:300;margin-top:-0.3rem">
-        ※ イラストレーターごとの個別料金は、メンバー紹介の「料金表を見る」からご確認ください
-      </p>
+      <h2 class="section-title" style="color:var(--star-white)">料金表</h2>
+      <p class="section-lead">イラスト・Live2D・セットプランの料金をまとめています。<br>ご依頼の目安としてご参照ください。正式金額はヒアリング後にお見積もりをお送りします。</p>
     </div>
     <div class="pricing-tabs reveal">
-      <button class="pricing-tab active" onclick="switchTab('live2d',this)">Live2D料金</button>
+      <button class="pricing-tab active" onclick="switchTab('illust',this)">イラスト料金</button>
+      <button class="pricing-tab" onclick="switchTab('live2d',this)">Live2D料金</button>
       <button class="pricing-tab" onclick="switchTab('option',this)">オプション</button>
       <button class="pricing-tab" onclick="switchTab('set',this)">セットプラン</button>
     </div>
 
-    <div class="pricing-panel active reveal" id="tab-live2d">
+    <!-- イラスト料金タブ（2人分まとめ表示） -->
+    <div class="pricing-panel active reveal" id="tab-illust">
+      <div class="illust-pricing-grid">
+
+        <div class="illust-pricing-col">
+          <p class="illust-col-label">ちゃま</p>
+          <table class="pricing-table">
+            <thead><tr><th style="width:50%">メニュー</th><th>料金</th></tr></thead>
+            <tbody>
+              <tr><td>バストアップ</td><td><span class="price-tag">¥10000〜</span></td></tr>
+              <tr><td>全身立ち絵</td><td><span class="price-tag">¥20000〜</span></td></tr>
+              <tr><td>一枚絵（背景込み）</td><td><span class="price-tag">¥30000〜</span></td></tr>
+              <tr><td>Live2D用全身立ち絵<br><span style="font-size:0.72rem;color:rgba(250,246,240,0.45)">パーツ分け込み</span></td><td><span class="price-tag">¥130000〜</span></td></tr>
+              <tr><td>三面図</td><td><span class="price-tag">¥15000〜</span></td></tr>
+              <tr><td>衣装デザイン</td><td><span class="price-tag">¥10000〜</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="illust-pricing-col">
+          <p class="illust-col-label">るいちりん</p>
+          <table class="pricing-table">
+            <thead><tr><th style="width:50%">メニュー</th><th>料金</th></tr></thead>
+            <tbody>
+              <tr><td>アイコン / バストアップ</td><td><span class="price-tag">¥15000〜</span></td></tr>
+              <tr><td>全身</td><td><span class="price-tag">¥30000〜</span></td></tr>
+              <tr><td>立ち絵 / キービジュアル</td><td><span class="price-tag">¥30000〜</span></td></tr>
+              <tr><td>SD</td><td><span class="price-tag">¥13000〜</span></td></tr>
+              <tr><td>表情差分</td><td><span class="price-tag">¥1000〜</span><span class="price-note"> / 1差分</span></td></tr>
+              <tr><td>背景イラスト</td><td><span class="price-tag">¥10000〜</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <p style="font-size:0.72rem;color:rgba(201,169,110,0.4);margin-top:1rem;font-weight:300">
+        ※ 料金はデザインの複雑さ・作業量により変動します。正式金額はヒアリング後にお見積もりをお送りします。
+      </p>
+    </div>
+
+    <div class="pricing-panel reveal" id="tab-live2d">
       <table class="pricing-table">
         <thead><tr><th style="width:42%">メニュー</th><th style="width:30%">料金</th><th>納期目安</th></tr></thead>
         <tbody>
@@ -1403,11 +1485,11 @@
     <div class="sched-status reveal">
       <div class="sched-badge sched-illust">
         <span class="sched-badge-label">ILLUSTRATION — イラスト</span>
-        <span class="sched-badge-month">9月着手分 受付中</span>
+        <span class="sched-badge-month">10月着手分 受付中</span>
       </div>
       <div class="sched-badge sched-live2d">
         <span class="sched-badge-label">LIVE2D</span>
-        <span class="sched-badge-month">10月着手分 受付中</span>
+        <span class="sched-badge-month">11月着手分 受付中</span>
       </div>
     </div>
     <!-- ▲▲ ここまで手動編集 ▲▲ -->
