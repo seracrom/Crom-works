@@ -210,9 +210,9 @@
   .pf-deck-btn:hover { background:rgba(201,169,110,0.16); border-color:var(--gold); color:var(--gold); }
   .pf-deck-arrow { font-size:0.9rem; opacity:0.8; }
 
-  /* 依頼シートボタン：差し色の黄緑（メロンソーダ色）の液体 */
-  :root { --sheet-hi:#F6FFDC; --sheet-1:#DDF98F; --sheet-2:#B5EA5C; --sheet-3:#8CCF3A; --sheet-ink:#22380C; }
-  .btn-sheet { position:relative; display:inline-flex; align-items:center; justify-content:center; padding:0.9rem 2.2rem; background:radial-gradient(circle at 30% 22%,var(--sheet-hi) 0%,var(--sheet-1) 38%,var(--sheet-2) 75%,var(--sheet-3) 100%); color:var(--sheet-ink); font-family:var(--font-body); font-weight:700; font-size:0.78rem; letter-spacing:0.15em; text-decoration:none; border-radius:40px 46px 38px 44px / 44px 38px 46px 40px; box-shadow:0 8px 22px rgba(140,207,58,0.35), inset -4px -5px 10px rgba(70,130,20,0.25), inset 4px 5px 8px rgba(255,255,255,0.55); animation:sheetWobble 5s ease-in-out infinite; transition:transform 0.35s cubic-bezier(.34,1.56,.64,1); }
+  /* 依頼シートボタン：差し色のピンクの液体 */
+  :root { --sheet-hi:#FFE1EB; --sheet-1:#FFA8C6; --sheet-2:#F2799F; --sheet-3:#E0628C; --sheet-ink:#4A0F24; }
+  .btn-sheet { position:relative; display:inline-flex; align-items:center; justify-content:center; padding:0.9rem 2.2rem; background:radial-gradient(circle at 30% 22%,var(--sheet-hi) 0%,var(--sheet-1) 38%,var(--sheet-2) 75%,var(--sheet-3) 100%); color:var(--sheet-ink); font-family:var(--font-body); font-weight:700; font-size:0.78rem; letter-spacing:0.15em; text-decoration:none; border-radius:40px 46px 38px 44px / 44px 38px 46px 40px; box-shadow:0 8px 22px rgba(224,98,140,0.35), inset -4px -5px 10px rgba(160,35,80,0.25), inset 4px 5px 8px rgba(255,255,255,0.55); animation:sheetWobble 5s ease-in-out infinite; transition:transform 0.35s cubic-bezier(.34,1.56,.64,1); }
   .btn-sheet:hover { transform:scale(1.05); }
   @keyframes sheetWobble {
     0%,100% { border-radius:40px 46px 38px 44px / 44px 38px 46px 40px; }
@@ -223,9 +223,9 @@
   .float-request { position:fixed; right:1.4rem; bottom:1.4rem; z-index:150; width:112px; height:112px; display:flex; align-items:center; justify-content:center; text-decoration:none; -webkit-tap-highlight-color:transparent; opacity:0; transform:translateY(30px) scale(0.6); pointer-events:none; transition:opacity 0.45s ease, transform 0.6s cubic-bezier(.34,1.56,.64,1); }
   .float-request.is-visible { opacity:1; transform:none; pointer-events:auto; }
   .float-request-inner { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; animation:frBob 4.2s ease-in-out infinite; }
-  .float-request-blob { position:absolute; inset:0; background:radial-gradient(circle at 32% 28%,var(--sheet-hi) 0%,var(--sheet-1) 34%,var(--sheet-2) 72%,var(--sheet-3) 100%); border-radius:58% 42% 55% 45% / 48% 58% 42% 52%; box-shadow:0 10px 26px rgba(140,207,58,0.45), inset -7px -9px 16px rgba(70,130,20,0.3), inset 6px 8px 14px rgba(255,255,255,0.55); animation:frMorph 6s ease-in-out infinite; transition:transform 0.35s cubic-bezier(.34,1.56,.64,1); }
+  .float-request-blob { position:absolute; inset:0; background:radial-gradient(circle at 32% 28%,var(--sheet-hi) 0%,var(--sheet-1) 34%,var(--sheet-2) 72%,var(--sheet-3) 100%); border-radius:58% 42% 55% 45% / 48% 58% 42% 52%; box-shadow:0 10px 26px rgba(224,98,140,0.45), inset -7px -9px 16px rgba(160,35,80,0.3), inset 6px 8px 14px rgba(255,255,255,0.55); animation:frMorph 6s ease-in-out infinite; transition:transform 0.35s cubic-bezier(.34,1.56,.64,1); }
   .float-request-blob::after { content:''; position:absolute; top:15%; left:21%; width:24%; height:13%; border-radius:50%; background:rgba(255,255,255,0.8); transform:rotate(-28deg); filter:blur(0.5px); }
-  .float-request-drop { position:absolute; top:-2px; left:8px; width:18px; height:18px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; background:radial-gradient(circle at 35% 30%,var(--sheet-hi) 0%,var(--sheet-2) 60%,var(--sheet-3) 100%); box-shadow:0 4px 10px rgba(140,207,58,0.4); animation:frDrop 4.2s ease-in-out infinite; }
+  .float-request-drop { position:absolute; top:-2px; left:8px; width:18px; height:18px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; background:radial-gradient(circle at 35% 30%,var(--sheet-hi) 0%,var(--sheet-2) 60%,var(--sheet-3) 100%); box-shadow:0 4px 10px rgba(224,98,140,0.4); animation:frDrop 4.2s ease-in-out infinite; }
   .float-request-text { position:relative; font-family:var(--font-body); font-weight:700; font-size:0.8rem; line-height:1.4; letter-spacing:0.06em; color:var(--sheet-ink); text-align:center; }
   .float-request:hover .float-request-blob { transform:scale(1.08); animation-duration:2.4s; }
   .float-request:focus-visible { outline:2px solid var(--gold); outline-offset:6px; border-radius:50%; }
